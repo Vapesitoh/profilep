@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vapesitoh – Neptlyfy</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./intro.css" />
+  <link rel="icon" type="image/png" href="./assets/img/favicon.ico">
+</head>
+<body>
+
+  <video class="bg-video" src="assets/video/intro.mp4" autoplay muted loop playsinline></video>
+  <div class="bg-overlay"></div>
+
+  <main class="wrap">
+    <section class="stack">
+
+      <!-- PANEL 1: PERFIL -->
+      <section class="panel panel-profile">
+        <header class="top">
+          <div class="top-left">
+            <div class="avatar">
+              <img src="assets/img/photo.jpg" alt="Vapesitoh" />
+            </div>
+<style>
+  /* Texto blanco y legible sobre glass */
+.legend{
+  color: rgba(255,255,255,.92);
+  text-shadow: 0 2px 10px rgba(0,0,0,.35);
+  font-size: .9rem;
+  line-height: 1.25;
+}
+
+/* efecto typing */
+.legend.typing{
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid rgba(255,255,255,.75);
+  width: 0;
+  animation:
+    typing 3.8s steps(60, end) forwards,
+    caret 700ms steps(1, end) infinite;
+}
+
+/* si en móvil es largo, mejor permitir 2 líneas con “typing” suave */
+@media (max-width: 520px){
+  .legend.typing{
+    white-space: normal;       /* permite salto */
+    border-right: none;        /* quita cursor */
+    width: auto;
+    animation: fadeSlide .7s ease both;
+  }
+}
+
+@keyframes typing{
+  from { width: 0; }
+  to   { width: 100%; }
+}
+@keyframes caret{
+  50% { border-color: transparent; }
+}
+@keyframes fadeSlide{
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* Asegura que el bloque del título pueda encogerse y hacer salto */
+.top-left, .title{
+  min-width: 0;
+}
+
+/* H1 y leyenda */
+.title h1{
+  color: rgba(255,255,255,.95);
+  text-shadow: 0 3px 14px rgba(0,0,0,.45);
+}
+
+.title .legend{
+  margin-top: 6px;
+  color: rgba(255,255,255,.88);
+  text-shadow: 0 2px 12px rgba(0,0,0,.50);
+
+  /* ✅ esto es lo que evita que se “tape” */
+  white-space: normal;       /* permite saltos */
+  overflow: visible;         /* no recorta */
+  text-overflow: clip;       /* sin ... */
+  display: block;
+
+  line-height: 1.25;
+  font-size: .92rem;
+
+  /* si quieres que no se haga eterno: máximo 2 líneas */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;     /* cambia a 3 si quieres */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+</style>
+            <div class="title">
+              <h1>Vapesitoh</h1>
+<p class="legend typing">
+  Awita de pancito galactico con chispitas cosmicas y cafecito de constelaciones con bombones sabor a marte yeii
+</p>            </div>
+          </div>
+
+          <div class="top-right">
+            <div class="stats-pill">
+              <span class="stats-icon">👁️</span>
+              <span id="visitCount">0</span>
+              <span class="stats-label">visitas</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="pills">
+          <button id="discordBtn" class="pill pill-ghost" type="button">
+            💬 <span>@vapesitoh</span>
+          </button>
+
+          <a class="pill" href="https://www.facebook.com/Vapesitoh" target="_blank" rel="noopener noreferrer">
+            📘 <span>Facebook</span>
+          </a>
+
+          <a class="pill" href="https://www.instagram.com/vapesitoh/" target="_blank" rel="noopener noreferrer">
+            📸 <span>Instagram</span>
+          </a>
+
+          <a class="pill" href="https://www.tiktok.com/@vapesitoh" target="_blank" rel="noopener noreferrer">
+            🎵 <span>TikTok</span>
+          </a>
+        </section>
+      </section>
+
+      <!-- PANEL 2: LINKS -->
+      <section class="panel panel-links">
+        <a class="link-row" href="https://www.facebook.com/Vapesitoh" target="_blank" rel="noopener noreferrer">
+          <div class="l-ico">📘</div>
+          <div class="l-txt">
+            <span class="l-title">Facebook</span>
+            <span class="l-sub">/Vapesitoh</span>
+          </div>
+          <div class="l-go">➜</div>
+        </a>
+
+        <a class="link-row" href="https://www.instagram.com/vapesitoh/" target="_blank" rel="noopener noreferrer">
+          <div class="l-ico">📸</div>
+          <div class="l-txt">
+            <span class="l-title">Instagram</span>
+            <span class="l-sub">@vapesitoh</span>
+          </div>
+          <div class="l-go">➜</div>
+        </a>
+
+        <a class="link-row" href="https://www.tiktok.com/@vapesitoh" target="_blank" rel="noopener noreferrer">
+          <div class="l-ico">🎵</div>
+          <div class="l-txt">
+            <span class="l-title">TikTok</span>
+            <span class="l-sub">@vapesitoh</span>
+          </div>
+          <div class="l-go">➜</div>
+        </a>
+      </section>
+
+      <!-- PANEL 3: PLAYER -->
+      <section class="panel panel-player">
+        <div class="player-top">
+          <button id="playIntroBtn" class="play-btn" type="button">▶ Reproducir música</button>
+          <button id="muteBtn" class="mute-btn" type="button" aria-label="Mute">🔈</button>
+        </div>
+
+        <div class="player-bottom">
+          <div class="song">
+            <span class="song-title">Play</span>
+            <span class="song-sub">pumped up kicks</span>
+          </div>
+
+          <div class="timeline">
+            <span id="currentTime">00:00</span>
+            <input type="range" id="seekBar" min="0" max="100" value="0" />
+            <span id="duration">00:00</span>
+          </div>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <audio id="introAudio" src="assets/music/music.mp3" preload="auto"></audio>
+  <script src="intro.js" defer></script>
+</body>
+</html>

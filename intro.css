@@ -1,0 +1,277 @@
+:root{
+  --accent:#f472b6;
+  --accent2:#a855f7;
+
+  --text:#2a2340;
+  --soft:#6f6493;
+
+  --glass: rgba(255,255,255,.18);
+  --glass2: rgba(255,255,255,.10);
+  --stroke: rgba(255,255,255,.35);
+  --shadow: 0 18px 50px rgba(25, 15, 60, .25);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui,-apple-system,sans-serif;}
+html,body{height:100%;}
+body{color:var(--text); overflow-x:hidden;}
+
+/* Fondo */
+.bg-video{
+  position:fixed; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  filter: brightness(1.03) saturate(1.08);
+  z-index:-2;
+}
+.bg-overlay{
+  position:fixed; inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255, 223, 249, .55), transparent 55%),
+    radial-gradient(circle at 85% 85%, rgba(210, 220, 255, .55), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.06));
+}
+
+/* Layout */
+.wrap{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 26px 14px;
+}
+.stack{
+  width: min(920px, 96vw);
+  display:flex;
+  flex-direction:column;
+  gap: 16px; /* separación real entre paneles */
+}
+
+/* Panel glass */
+.panel{
+  border-radius: 26px;
+  background: linear-gradient(135deg, var(--glass), var(--glass2));
+  border: 1px solid var(--stroke);
+  backdrop-filter: blur(26px) saturate(170%);
+  -webkit-backdrop-filter: blur(26px) saturate(170%);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* brillo interno suave */
+.panel::before{
+  content:"";
+  position:absolute; inset:-45%;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(244,114,182,.18), transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(168,85,247,.16), transparent 52%);
+  pointer-events:none;
+}
+
+/* ---------------- PERFIL ---------------- */
+.panel-profile{ padding: 18px; }
+
+.top{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding: 4px 4px 10px;
+}
+.top-left{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  min-width: 0;
+}
+.avatar{
+  width:66px;height:66px;
+  border-radius:22px;
+  padding:3px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 14px 28px rgba(236,72,153,.28);
+  flex:0 0 auto;
+}
+.avatar img{
+  width:100%;height:100%;
+  border-radius:18px;
+  object-fit:cover;
+  display:block;
+}
+
+.title h1{
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.05;
+}
+.title p{
+  margin-top:4px;
+  font-size:.88rem;
+  color: var(--soft);
+}
+
+.stats-pill{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.40);
+  border: 1px solid rgba(255,255,255,.45);
+  box-shadow: 0 10px 25px rgba(30, 15, 70, .12);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.stats-icon{font-size:.95rem;}
+.stats-label{font-size:.82rem;color:var(--soft);}
+#visitCount{font-weight:800;}
+
+/* Pills */
+.pills{
+  position:relative;
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
+  padding: 10px 4px 2px;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  text-decoration:none;
+  color: var(--text);
+  background: rgba(255,255,255,.42);
+  border: 1px solid rgba(255,255,255,.46);
+  box-shadow: 0 10px 22px rgba(30, 15, 70, .10);
+  transition: transform .15s ease, background .15s ease;
+  font-size:.9rem;
+}
+.pill:hover{transform: translateY(-1px); background: rgba(255,255,255,.55);}
+.pill-ghost{cursor:pointer;}
+
+#discordBtn.copied{
+  background: linear-gradient(135deg, rgba(182,248,210,.85), rgba(195,250,226,.85));
+  color:#0f172a;
+}
+
+/* ---------------- LINKS ---------------- */
+.panel-links{
+  padding: 16px;
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+}
+
+.link-row{
+  display:grid;
+  grid-template-columns: auto 1fr auto;
+  align-items:center;
+  gap: 10px;
+  padding: 14px 14px;
+  border-radius: 18px;
+  text-decoration:none;
+  color: var(--text);
+  background: rgba(255,255,255,.42);
+  border: 1px solid rgba(255,255,255,.45);
+  box-shadow: 0 10px 24px rgba(20, 10, 60, .10);
+  transition: transform .15s ease, background .15s ease;
+}
+.link-row:hover{transform: translateY(-1px); background: rgba(255,255,255,.58);}
+
+.l-ico{font-size:1.05rem;}
+.l-txt{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.l-title{font-weight:800;}
+.l-sub{font-size:.85rem;color:var(--soft);}
+.l-go{font-size:1rem;opacity:.85;}
+
+/* ---------------- PLAYER ---------------- */
+.panel-player{
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(0,0,0,.18), rgba(0,0,0,.10));
+  border: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.92);
+}
+.panel-player::before{ display:none; } /* para que no se vea raro en oscuro */
+
+.player-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.play-btn{
+  flex:1;
+  border:none;
+  cursor:pointer;
+  padding: 12px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 14px 26px rgba(236,72,153,.35);
+}
+.mute-btn{
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  border-radius: 999px;
+  padding: 12px 12px;
+  cursor:pointer;
+}
+
+.player-bottom{
+  display:flex;
+  flex-direction:column;
+  gap: 8px;
+}
+.song{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap: 12px;
+}
+.song-title{font-weight:800;}
+.song-sub{opacity:.75;font-size:.9rem;}
+
+.timeline{
+  display:grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items:center;
+  font-size:.85rem;
+  opacity:.95;
+}
+
+#seekBar{
+  width:100%;
+  appearance:none;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.25);
+  outline:none;
+}
+#seekBar::-webkit-slider-thumb{
+  appearance:none;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0 0 5px rgba(244,114,182,.35);
+}
+
+/* Mobile ajustes */
+@media (max-width: 520px){
+  .title h1{font-size:1.45rem;}
+  .avatar{width:60px;height:60px;}
+  .panel{padding: 16px;}
+  .panel-links{padding:14px;}
+  .link-row{padding: 12px 12px;}
+}
