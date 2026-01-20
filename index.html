@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>Vapesitoh – Neptlyfy</title>
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./intro.css" />
-  <link rel="icon" type="image/png" href="./assets/img/favicon.ico">
+  <link rel="icon" href="./assets/img/favicon.ico" />
 </head>
-<body>
+
+<body class="theme-glass style-soft">
 
   <video class="bg-video" src="assets/video/intro.mp4" autoplay muted loop playsinline></video>
   <div class="bg-overlay"></div>
@@ -23,88 +24,67 @@
             <div class="avatar">
               <img src="assets/img/photo.jpg" alt="Vapesitoh" />
             </div>
-<style>
-  /* Texto blanco y legible sobre glass */
-.legend{
-  color: rgba(255,255,255,.92);
-  text-shadow: 0 2px 10px rgba(0,0,0,.35);
-  font-size: .9rem;
-  line-height: 1.25;
-}
 
-/* efecto typing */
-.legend.typing{
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid rgba(255,255,255,.75);
-  width: 0;
-  animation:
-    typing 3.8s steps(60, end) forwards,
-    caret 700ms steps(1, end) infinite;
-}
+            <!-- ⚠️ Te recomiendo mover este <style> a intro.css luego,
+                 pero lo dejo aquí como lo tenías -->
+            <style>
+              .legend{
+                color: rgba(255,255,255,.92);
+                text-shadow: 0 2px 10px rgba(0,0,0,.35);
+                font-size: .9rem;
+                line-height: 1.25;
+              }
+              .legend.typing{
+                overflow: hidden;
+                white-space: nowrap;
+                border-right: 2px solid rgba(255,255,255,.75);
+                width: 0;
+                animation:
+                  typing 3.8s steps(60, end) forwards,
+                  caret 700ms steps(1, end) infinite;
+              }
+              @media (max-width: 520px){
+                .legend.typing{
+                  white-space: normal;
+                  border-right: none;
+                  width: auto;
+                  animation: fadeSlide .7s ease both;
+                }
+              }
+              @keyframes typing{ from { width: 0; } to { width: 100%; } }
+              @keyframes caret{ 50% { border-color: transparent; } }
+              @keyframes fadeSlide{ from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-/* si en móvil es largo, mejor permitir 2 líneas con “typing” suave */
-@media (max-width: 520px){
-  .legend.typing{
-    white-space: normal;       /* permite salto */
-    border-right: none;        /* quita cursor */
-    width: auto;
-    animation: fadeSlide .7s ease both;
-  }
-}
+              .top-left, .title{ min-width: 0; }
+              .title h1{
+                color: rgba(255,255,255,.95);
+                text-shadow: 0 3px 14px rgba(0,0,0,.45);
+              }
+              .title .legend{
+                margin-top: 6px;
+                color: rgba(255,255,255,.88);
+                text-shadow: 0 2px 12px rgba(0,0,0,.50);
+                white-space: normal;
+                overflow: visible;
+                text-overflow: clip;
+                display: block;
+                line-height: 1.25;
+                font-size: .92rem;
 
-@keyframes typing{
-  from { width: 0; }
-  to   { width: 100%; }
-}
-@keyframes caret{
-  50% { border-color: transparent; }
-}
-@keyframes fadeSlide{
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-/* Asegura que el bloque del título pueda encogerse y hacer salto */
-.top-left, .title{
-  min-width: 0;
-}
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+              }
+            </style>
 
-/* H1 y leyenda */
-.title h1{
-  color: rgba(255,255,255,.95);
-  text-shadow: 0 3px 14px rgba(0,0,0,.45);
-}
-
-.title .legend{
-  margin-top: 6px;
-  color: rgba(255,255,255,.88);
-  text-shadow: 0 2px 12px rgba(0,0,0,.50);
-
-  /* ✅ esto es lo que evita que se “tape” */
-  white-space: normal;       /* permite saltos */
-  overflow: visible;         /* no recorta */
-  text-overflow: clip;       /* sin ... */
-  display: block;
-
-  line-height: 1.25;
-  font-size: .92rem;
-
-  /* si quieres que no se haga eterno: máximo 2 líneas */
-  display: -webkit-box;
-  -webkit-line-clamp: 2;     /* cambia a 3 si quieres */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-</style>
             <div class="title">
               <h1>Vapesitoh</h1>
-<p class="legend typing">
-  Awita de pancito galactico con chispitas cosmicas y cafecito de constelaciones con bombones sabor a marte yeii
-</p>            </div>
+              <p class="legend typing">
+                Awita de pancito galactico con chispitas cosmicas y cafecito de constelaciones con bombones sabor a marte yeii
+              </p>
+            </div>
           </div>
-
-     
         </header>
 
         <section class="pills">
@@ -179,6 +159,32 @@
 
     </section>
   </main>
+
+  <!-- ✅ SWITCHER FLOTANTE (esquina) -->
+  <div class="theme-fab" id="themeFab" aria-label="Theme menu">🎨</div>
+
+  <div class="theme-pop" id="themePop" aria-hidden="true">
+    <div class="theme-pop-title">Apariencia</div>
+
+    <div class="theme-row">
+      <span class="theme-label">Tema</span>
+      <div class="seg">
+        <button type="button" data-theme="glass">Glass</button>
+        <button type="button" data-theme="blue">Blue</button>
+        <button type="button" data-theme="city">City</button>
+        <button type="button" data-theme="mono">Mono</button>
+      </div>
+    </div>
+
+    <div class="theme-row">
+      <span class="theme-label">Estilo</span>
+      <div class="seg">
+        <button type="button" data-style="soft">Soft</button>
+        <button type="button" data-style="outline">Outline</button>
+        <button type="button" data-style="compact">Compact</button>
+      </div>
+    </div>
+  </div>
 
   <audio id="introAudio" src="assets/music/music.mp3" preload="auto"></audio>
   <script src="intro.js" defer></script>
