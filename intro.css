@@ -11,11 +11,19 @@
   --shadow: 0 18px 50px rgba(25, 15, 60, .25);
 }
 
+/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui,-apple-system,sans-serif;}
 html,body{height:100%;}
 body{color:var(--text); overflow-x:hidden;}
 
-/* Fondo */
+/* Transición bonita al cambiar */
+body, .panel, .pill, .link-row, .panel-player, .bg-overlay{
+  transition: background .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+
+/* =========================
+   FONDO
+   ========================= */
 .bg-video{
   position:fixed; inset:0;
   width:100%; height:100%;
@@ -33,7 +41,9 @@ body{color:var(--text); overflow-x:hidden;}
     linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.06));
 }
 
-/* Layout */
+/* =========================
+   LAYOUT
+   ========================= */
 .wrap{
   min-height:100vh;
   display:flex;
@@ -45,10 +55,12 @@ body{color:var(--text); overflow-x:hidden;}
   width: min(920px, 96vw);
   display:flex;
   flex-direction:column;
-  gap: 16px; /* separación real entre paneles */
+  gap: 16px;
 }
 
-/* Panel glass */
+/* =========================
+   PANEL GLASS
+   ========================= */
 .panel{
   border-radius: 26px;
   background: linear-gradient(135deg, var(--glass), var(--glass2));
@@ -71,7 +83,9 @@ body{color:var(--text); overflow-x:hidden;}
   pointer-events:none;
 }
 
-/* ---------------- PERFIL ---------------- */
+/* =========================
+   PERFIL
+   ========================= */
 .panel-profile{ padding: 18px; }
 
 .top{
@@ -131,7 +145,9 @@ body{color:var(--text); overflow-x:hidden;}
 .stats-label{font-size:.82rem;color:var(--soft);}
 #visitCount{font-weight:800;}
 
-/* Pills */
+/* =========================
+   PILLS / BOTONES
+   ========================= */
 .pills{
   position:relative;
   display:flex;
@@ -142,7 +158,7 @@ body{color:var(--text); overflow-x:hidden;}
 .pill{
   display:inline-flex;
   align-items:center;
-  gap: 8px;
+  gap: 10px;
   padding: 8px 12px;
   border-radius: 999px;
   text-decoration:none;
@@ -155,13 +171,16 @@ body{color:var(--text); overflow-x:hidden;}
 }
 .pill:hover{transform: translateY(-1px); background: rgba(255,255,255,.55);}
 .pill-ghost{cursor:pointer;}
+.pill i{font-size: 1rem; opacity:.95;}
 
 #discordBtn.copied{
   background: linear-gradient(135deg, rgba(182,248,210,.85), rgba(195,250,226,.85));
   color:#0f172a;
 }
 
-/* ---------------- LINKS ---------------- */
+/* =========================
+   LINKS
+   ========================= */
 .panel-links{
   padding: 16px;
   display:flex;
@@ -185,20 +204,24 @@ body{color:var(--text); overflow-x:hidden;}
 }
 .link-row:hover{transform: translateY(-1px); background: rgba(255,255,255,.58);}
 
-.l-ico{font-size:1.05rem;}
+.l-ico{display:flex;align-items:center;justify-content:center;}
+.l-ico i{font-size:1.05rem;}
 .l-txt{display:flex;flex-direction:column;gap:2px;min-width:0;}
 .l-title{font-weight:800;}
 .l-sub{font-size:.85rem;color:var(--soft);}
-.l-go{font-size:1rem;opacity:.85;}
+.l-go{display:flex;align-items:center;justify-content:center; opacity:.85;}
+.l-go i{font-size:1rem;}
 
-/* ---------------- PLAYER ---------------- */
+/* =========================
+   PLAYER
+   ========================= */
 .panel-player{
   padding: 16px;
   background: linear-gradient(135deg, rgba(0,0,0,.18), rgba(0,0,0,.10));
   border: 1px solid rgba(255,255,255,.18);
   color: rgba(255,255,255,.92);
 }
-.panel-player::before{ display:none; } /* para que no se vea raro en oscuro */
+.panel-player::before{ display:none; }
 
 .player-top{
   display:flex;
@@ -217,7 +240,12 @@ body{color:var(--text); overflow-x:hidden;}
   color: #fff;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   box-shadow: 0 14px 26px rgba(236,72,153,.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
 }
+.play-btn i{font-size:1rem;}
 .mute-btn{
   border: 1px solid rgba(255,255,255,.25);
   background: rgba(255,255,255,.12);
@@ -225,7 +253,11 @@ body{color:var(--text); overflow-x:hidden;}
   border-radius: 999px;
   padding: 12px 12px;
   cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
+.mute-btn i{font-size:1rem;}
 
 .player-bottom{
   display:flex;
@@ -253,12 +285,14 @@ body{color:var(--text); overflow-x:hidden;}
 #seekBar{
   width:100%;
   appearance:none;
+  -webkit-appearance:none;
   height: 5px;
   border-radius: 999px;
   background: rgba(255,255,255,.25);
   outline:none;
 }
 #seekBar::-webkit-slider-thumb{
+  -webkit-appearance:none;
   appearance:none;
   width: 14px;
   height: 14px;
@@ -267,97 +301,63 @@ body{color:var(--text); overflow-x:hidden;}
   box-shadow: 0 0 0 5px rgba(244,114,182,.35);
 }
 
-/* Mobile ajustes */
-@media (max-width: 520px){
-  .title h1{font-size:1.45rem;}
-  .avatar{width:60px;height:60px;}
-  .panel{padding: 16px;}
-  .panel-links{padding:14px;}
-  .link-row{padding: 12px 12px;}
-}
-/* =========================
-   THEME BAR
-   ========================= */
-.themebar{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  align-items:center;
-  padding: 6px 4px 2px;
-}
-.themebar .divider{
-  width: 1px;
-  height: 26px;
-  background: rgba(255,255,255,.25);
-  border-radius: 99px;
-}
-
-/* Transición bonita al cambiar */
-body, .panel, .pill, .link-row, .panel-player, .bg-overlay{
-  transition: background .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease, filter .25s ease;
+/* Firefox thumb */
+#seekBar::-moz-range-thumb{
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: #fff;
+  border: none;
 }
 
 /* =========================
    THEMES (COLORES + GLASS)
-   Aplica con body.theme-xxxx
    ========================= */
-
-/* 🌌 GLASS (tu actual) */
 body.theme-glass{
   --accent:#f472b6;
   --accent2:#a855f7;
   --text:#2a2340;
   --soft:#6f6493;
-
   --glass: rgba(255,255,255,.18);
   --glass2: rgba(255,255,255,.10);
   --stroke: rgba(255,255,255,.35);
   --shadow: 0 18px 50px rgba(25, 15, 60, .25);
 }
 
-/* 🟦 BLUE (como el primer ejemplo) */
 body.theme-blue{
-  --accent:#60a5fa;     /* azul */
-  --accent2:#22d3ee;    /* cian */
-
+  --accent:#60a5fa;
+  --accent2:#22d3ee;
   --text:#eaf2ff;
   --soft:rgba(234,242,255,.72);
-
   --glass: rgba(10, 35, 70, .42);
   --glass2: rgba(10, 35, 70, .22);
   --stroke: rgba(255,255,255,.18);
   --shadow: 0 18px 60px rgba(0,0,0,.35);
 }
 
-/* 🌃 CITY (oscuro elegante como el 2do) */
 body.theme-city{
   --accent:#ffffff;
   --accent2:#a1a1aa;
-
   --text:#f8fafc;
   --soft:rgba(248,250,252,.70);
-
   --glass: rgba(2, 6, 23, .52);
   --glass2: rgba(2, 6, 23, .30);
   --stroke: rgba(255,255,255,.22);
   --shadow: 0 24px 70px rgba(0,0,0,.60);
 }
 
-/* ⚫ MONO (minimal/negro como el 3ro) */
 body.theme-mono{
   --accent:#d4d4d8;
   --accent2:#ffffff;
-
   --text:#e5e7eb;
   --soft:rgba(229,231,235,.65);
-
   --glass: rgba(0,0,0,.42);
   --glass2: rgba(0,0,0,.24);
   --stroke: rgba(255,255,255,.14);
   --shadow: 0 22px 70px rgba(0,0,0,.70);
 }
 
-/* Ajuste: overlay según tema (opcional) */
+/* Overlay por tema */
 body.theme-blue .bg-overlay{
   background:
     radial-gradient(circle at 20% 15%, rgba(56,189,248,.22), transparent 55%),
@@ -374,15 +374,11 @@ body.theme-mono .bg-overlay{
 
 /* =========================
    STYLES (FORMA / BORDES)
-   Aplica con body.style-xxxx
    ========================= */
-
-/* Soft (tu estilo actual) */
 body.style-soft .panel{
   border-radius: 26px;
 }
 
-/* Outline (como cards con borde blanco marcado) */
 body.style-outline .panel{
   background: rgba(0,0,0,.08);
   border: 2px solid rgba(255,255,255,.65);
@@ -394,37 +390,11 @@ body.style-outline .pill{
   background: rgba(0,0,0,.10);
 }
 
-/* Compact (más “limpio”/estrecho como bio minimal) */
 body.style-compact .stack{ width: min(760px, 96vw); }
 body.style-compact .panel{ padding: 14px; border-radius: 20px; }
 body.style-compact .link-row{ padding: 12px 12px; border-radius: 16px; }
 body.style-compact .avatar{ width:60px; height:60px; border-radius:20px; }
-.theme-pop{
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  width: 260px;
-  padding: 14px;
-  border-radius: 18px;
 
-  background: linear-gradient(135deg, var(--glass), var(--glass2));
-  backdrop-filter: blur(22px);
-  border: 1px solid var(--stroke);
-  box-shadow: var(--shadow);
-
-  opacity: 0;
-  transform: translateY(-8px) scale(.98);
-  pointer-events: none;
-
-  transition: opacity .18s ease, transform .18s ease;
-  z-index: 50;
-}
-
-.theme-pop.open{
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
-}
 /* =========================
    🎨 FLOATING THEME SWITCHER
    ========================= */
@@ -450,6 +420,7 @@ body.style-compact .avatar{ width:60px; height:60px; border-radius:20px; }
   user-select:none;
   transition: transform .15s ease, background .15s ease;
 }
+.theme-fab i{ font-size: 1.2rem; opacity:.95; }
 .theme-fab:hover{ transform: translateY(-2px); background: rgba(255,255,255,.30); }
 
 .theme-pop{
@@ -514,7 +485,12 @@ body.style-compact .avatar{ width:60px; height:60px; border-radius:20px; }
   cursor: pointer;
   transition: transform .12s ease, background .12s ease, border-color .12s ease;
   font-size: .86rem;
+
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
 }
+.seg button i{ font-size: .95rem; opacity:.95; }
 .seg button:hover{ transform: translateY(-1px); background: rgba(255,255,255,.22); }
 
 .seg button.active{
@@ -529,8 +505,14 @@ body.style-compact .avatar{ width:60px; height:60px; border-radius:20px; }
   opacity: .9;
 }
 
-/* En móvil: súbelo un poquito para que no choque con barras */
+/* Mobile ajustes */
 @media (max-width: 520px){
+  .title h1{font-size:1.45rem;}
+  .avatar{width:60px;height:60px;}
+  .panel{padding: 16px;}
+  .panel-links{padding:14px;}
+  .link-row{padding: 12px 12px;}
+
   .theme-fab{ right: 12px; bottom: 12px; }
   .theme-pop{ right: 12px; bottom: 70px; }
 }

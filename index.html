@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <title>Vapesitoh – Neptlyfy</title>
 
+  <!-- Font Awesome (iconos pro) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./intro.css" />
   <link rel="icon" href="./assets/img/favicon.ico" />
@@ -25,8 +31,7 @@
               <img src="assets/img/photo.jpg" alt="Vapesitoh" />
             </div>
 
-            <!-- ⚠️ Te recomiendo mover este <style> a intro.css luego,
-                 pero lo dejo aquí como lo tenías -->
+            <!-- ⚠️ Luego puedes mover esto a intro.css, pero lo dejo igual -->
             <style>
               .legend{
                 color: rgba(255,255,255,.92);
@@ -89,19 +94,23 @@
 
         <section class="pills">
           <button id="discordBtn" class="pill pill-ghost" type="button">
-            💬 <span>@vapesitoh</span>
+            <i class="fa-brands fa-discord"></i>
+            <span>@vapesitoh</span>
           </button>
 
           <a class="pill" href="https://www.facebook.com/Vapesitoh" target="_blank" rel="noopener noreferrer">
-            📘 <span>Facebook</span>
+            <i class="fa-brands fa-facebook"></i>
+            <span>Facebook</span>
           </a>
 
           <a class="pill" href="https://www.instagram.com/vapesitoh/" target="_blank" rel="noopener noreferrer">
-            📸 <span>Instagram</span>
+            <i class="fa-brands fa-instagram"></i>
+            <span>Instagram</span>
           </a>
 
           <a class="pill" href="https://www.tiktok.com/@vapesitoh" target="_blank" rel="noopener noreferrer">
-            🎵 <span>TikTok</span>
+            <i class="fa-brands fa-tiktok"></i>
+            <span>TikTok</span>
           </a>
         </section>
       </section>
@@ -109,38 +118,44 @@
       <!-- PANEL 2: LINKS -->
       <section class="panel panel-links">
         <a class="link-row" href="https://www.facebook.com/Vapesitoh" target="_blank" rel="noopener noreferrer">
-          <div class="l-ico">📘</div>
+          <div class="l-ico"><i class="fa-brands fa-facebook"></i></div>
           <div class="l-txt">
             <span class="l-title">Facebook</span>
             <span class="l-sub">/Vapesitoh</span>
           </div>
-          <div class="l-go">➜</div>
+          <div class="l-go"><i class="fa-solid fa-arrow-right"></i></div>
         </a>
 
         <a class="link-row" href="https://www.instagram.com/vapesitoh/" target="_blank" rel="noopener noreferrer">
-          <div class="l-ico">📸</div>
+          <div class="l-ico"><i class="fa-brands fa-instagram"></i></div>
           <div class="l-txt">
             <span class="l-title">Instagram</span>
             <span class="l-sub">@vapesitoh</span>
           </div>
-          <div class="l-go">➜</div>
+          <div class="l-go"><i class="fa-solid fa-arrow-right"></i></div>
         </a>
 
         <a class="link-row" href="https://www.tiktok.com/@vapesitoh" target="_blank" rel="noopener noreferrer">
-          <div class="l-ico">🎵</div>
+          <div class="l-ico"><i class="fa-brands fa-tiktok"></i></div>
           <div class="l-txt">
             <span class="l-title">TikTok</span>
             <span class="l-sub">@vapesitoh</span>
           </div>
-          <div class="l-go">➜</div>
+          <div class="l-go"><i class="fa-solid fa-arrow-right"></i></div>
         </a>
       </section>
 
       <!-- PANEL 3: PLAYER -->
       <section class="panel panel-player">
         <div class="player-top">
-          <button id="playIntroBtn" class="play-btn" type="button">▶ Reproducir música</button>
-          <button id="muteBtn" class="mute-btn" type="button" aria-label="Mute">🔈</button>
+          <button id="playIntroBtn" class="play-btn" type="button">
+            <i class="fa-solid fa-play"></i>
+            <span>Reproducir música</span>
+          </button>
+
+          <button id="muteBtn" class="mute-btn" type="button" aria-label="Mute">
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
         </div>
 
         <div class="player-bottom">
@@ -161,27 +176,44 @@
   </main>
 
   <!-- ✅ SWITCHER FLOTANTE (esquina) -->
-  <div class="theme-fab" id="themeFab" aria-label="Theme menu">🎨</div>
+  <div class="theme-fab" id="themeFab" aria-label="Apariencia">
+    <i class="fa-solid fa-palette"></i>
+  </div>
 
-  <div class="theme-pop" id="themePop" aria-hidden="true">
+  <!-- ✅ SIN aria-hidden para evitar warning -->
+  <div class="theme-pop" id="themePop">
     <div class="theme-pop-title">Apariencia</div>
 
     <div class="theme-row">
       <span class="theme-label">Tema</span>
       <div class="seg">
-        <button type="button" data-theme="glass">Glass</button>
-        <button type="button" data-theme="blue">Blue</button>
-        <button type="button" data-theme="city">City</button>
-        <button type="button" data-theme="mono">Mono</button>
+        <button type="button" data-theme="glass">
+          <i class="fa-solid fa-wand-magic-sparkles"></i><span>Glass</span>
+        </button>
+        <button type="button" data-theme="blue">
+          <i class="fa-solid fa-droplet"></i><span>Blue</span>
+        </button>
+        <button type="button" data-theme="city">
+          <i class="fa-solid fa-city"></i><span>City</span>
+        </button>
+        <button type="button" data-theme="mono">
+          <i class="fa-solid fa-circle-half-stroke"></i><span>Mono</span>
+        </button>
       </div>
     </div>
 
     <div class="theme-row">
       <span class="theme-label">Estilo</span>
       <div class="seg">
-        <button type="button" data-style="soft">Soft</button>
-        <button type="button" data-style="outline">Outline</button>
-        <button type="button" data-style="compact">Compact</button>
+        <button type="button" data-style="soft">
+          <i class="fa-solid fa-cloud"></i><span>Soft</span>
+        </button>
+        <button type="button" data-style="outline">
+          <i class="fa-regular fa-square"></i><span>Outline</span>
+        </button>
+        <button type="button" data-style="compact">
+          <i class="fa-solid fa-compress"></i><span>Compact</span>
+        </button>
       </div>
     </div>
   </div>
