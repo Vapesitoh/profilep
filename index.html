@@ -2,9 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Vapesitoh – Neptlyfy</title>
+  <title>Vapesitoh</title>
 
-  <!-- Font Awesome (iconos pro) -->
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -12,156 +12,94 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./intro.css" />
-  <link rel="icon" href="./assets/img/favicon.ico" />
 </head>
 
 <body class="theme-glass style-soft">
-
+<!-- INTRO OVERLAY -->
+<div id="introOverlay" class="intro-overlay">
+  <div class="intro-content">
+    <h2>Click here</h2>
+  </div>
+</div>
+  <!-- VIDEO FONDO -->
   <video class="bg-video" src="assets/video/intro.mp4" autoplay muted loop playsinline></video>
   <div class="bg-overlay"></div>
 
   <main class="wrap">
     <section class="stack">
 
-      <!-- PANEL 1: PERFIL -->
+      <!-- PANEL PERFIL -->
       <section class="panel panel-profile">
+
         <header class="top">
           <div class="top-left">
+
             <div class="avatar">
               <img src="assets/img/photo.jpg" alt="Vapesitoh" />
             </div>
 
-            <!-- ⚠️ Luego puedes mover esto a intro.css, pero lo dejo igual -->
-            <style>
-              .legend{
-                color: rgba(255,255,255,.92);
-                text-shadow: 0 2px 10px rgba(0,0,0,.35);
-                font-size: .9rem;
-                line-height: 1.25;
-              }
-              .legend.typing{
-                overflow: hidden;
-                white-space: nowrap;
-                border-right: 2px solid rgba(255,255,255,.75);
-                width: 0;
-                animation:
-                  typing 3.8s steps(60, end) forwards,
-                  caret 700ms steps(1, end) infinite;
-              }
-              @media (max-width: 520px){
-                .legend.typing{
-                  white-space: normal;
-                  border-right: none;
-                  width: auto;
-                  animation: fadeSlide .7s ease both;
-                }
-              }
-              @keyframes typing{ from { width: 0; } to { width: 100%; } }
-              @keyframes caret{ 50% { border-color: transparent; } }
-              @keyframes fadeSlide{ from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-
-              .top-left, .title{ min-width: 0; }
-              .title h1{
-                color: rgba(255,255,255,.95);
-                text-shadow: 0 3px 14px rgba(0,0,0,.45);
-              }
-              .title .legend{
-                margin-top: 6px;
-                color: rgba(255,255,255,.88);
-                text-shadow: 0 2px 12px rgba(0,0,0,.50);
-                white-space: normal;
-                overflow: visible;
-                text-overflow: clip;
-                display: block;
-                line-height: 1.25;
-                font-size: .92rem;
-
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-              }
-            </style>
-
             <div class="title">
               <h1>Vapesitoh</h1>
-              <p class="legend typing">
+              <p class="legend">
                 Awita de pancito galactico con chispitas cosmicas y cafecito de constelaciones con bombones sabor a marte yeii
               </p>
             </div>
+
           </div>
         </header>
 
+        <!-- REDES -->
         <section class="pills">
-          <button id="discordBtn" class="pill pill-ghost" type="button">
-            <i class="fa-brands fa-discord"></i>
-            <span>@vapesitoh</span>
-          </button>
 
-          <a class="pill" href="https://www.facebook.com/Vapesitoh" target="_blank" rel="noopener noreferrer">
+          <a class="pill" href="https://www.facebook.com/Vapesitoh" target="_blank">
             <i class="fa-brands fa-facebook"></i>
             <span>Facebook</span>
           </a>
 
-          <a class="pill" href="https://www.instagram.com/vapesitoh/" target="_blank" rel="noopener noreferrer">
+          <a class="pill" href="https://www.instagram.com/vapesitoh/" target="_blank">
             <i class="fa-brands fa-instagram"></i>
             <span>Instagram</span>
           </a>
 
-          <a class="pill" href="https://www.tiktok.com/@vapesitoh" target="_blank" rel="noopener noreferrer">
+          <a class="pill" href="https://www.tiktok.com/@vapesitoh" target="_blank">
             <i class="fa-brands fa-tiktok"></i>
             <span>TikTok</span>
           </a>
+
+          <a class="pill" href="https://discord.gg/nZZmVD3J" target="_blank">
+            <i class="fa-brands fa-discord"></i>
+            <span>Discord</span>
+          </a>
+
         </section>
+
+        <!-- GIFS ABAJO -->
+        <section class="gif-row">
+          <img src="assets/gif/gif1.gif" alt="gif1">
+          <img src="assets/gif/gif2.gif" alt="gif2">
+        </section>
+
       </section>
 
-      <!-- PANEL 2: LINKS -->
-      <section class="panel panel-links">
-        <a class="link-row" href="https://www.facebook.com/Vapesitoh" target="_blank" rel="noopener noreferrer">
-          <div class="l-ico"><i class="fa-brands fa-facebook"></i></div>
-          <div class="l-txt">
-            <span class="l-title">Facebook</span>
-            <span class="l-sub">/Vapesitoh</span>
-          </div>
-          <div class="l-go"><i class="fa-solid fa-arrow-right"></i></div>
-        </a>
 
-        <a class="link-row" href="https://www.instagram.com/vapesitoh/" target="_blank" rel="noopener noreferrer">
-          <div class="l-ico"><i class="fa-brands fa-instagram"></i></div>
-          <div class="l-txt">
-            <span class="l-title">Instagram</span>
-            <span class="l-sub">@vapesitoh</span>
-          </div>
-          <div class="l-go"><i class="fa-solid fa-arrow-right"></i></div>
-        </a>
-
-        <a class="link-row" href="https://www.tiktok.com/@vapesitoh" target="_blank" rel="noopener noreferrer">
-          <div class="l-ico"><i class="fa-brands fa-tiktok"></i></div>
-          <div class="l-txt">
-            <span class="l-title">TikTok</span>
-            <span class="l-sub">@vapesitoh</span>
-          </div>
-          <div class="l-go"><i class="fa-solid fa-arrow-right"></i></div>
-        </a>
-      </section>
-
-      <!-- PANEL 3: PLAYER -->
+      <!-- PANEL PLAYER -->
       <section class="panel panel-player">
+
         <div class="player-top">
-          <button id="playIntroBtn" class="play-btn" type="button">
+          <button id="playBtn" class="play-btn" type="button">
             <i class="fa-solid fa-play"></i>
-            <span>Reproducir música</span>
+            <span>Play</span>
           </button>
 
-          <button id="muteBtn" class="mute-btn" type="button" aria-label="Mute">
+          <button id="muteBtn" class="mute-btn" type="button">
             <i class="fa-solid fa-volume-high"></i>
           </button>
         </div>
 
         <div class="player-bottom">
           <div class="song">
-            <span class="song-title">Play</span>
-            <span class="song-sub">pumped up kicks</span>
+            <span class="song-title">Foster The People - Pumped Up Kicks</span>
+            <span class="song-sub" style="font-size: 40px;">💀</span>
           </div>
 
           <div class="timeline">
@@ -170,55 +108,66 @@
             <span id="duration">00:00</span>
           </div>
         </div>
+
       </section>
 
     </section>
   </main>
 
-  <!-- ✅ SWITCHER FLOTANTE (esquina) -->
-  <div class="theme-fab" id="themeFab" aria-label="Apariencia">
-    <i class="fa-solid fa-palette"></i>
-  </div>
+  <audio id="audio" src="assets/music/music.mp3" preload="auto"></audio>
+<script>
+  const introOverlay = document.getElementById("introOverlay");
 
-  <!-- ✅ SIN aria-hidden para evitar warning -->
-  <div class="theme-pop" id="themePop">
-    <div class="theme-pop-title">Apariencia</div>
+introOverlay.addEventListener("click", () => {
+  audio.play();
+  playBtn.innerHTML = `<i class="fa-solid fa-pause"></i> <span>Pausar</span>`;
+  introOverlay.classList.add("hide");
+});
+</script>
 
-    <div class="theme-row">
-      <span class="theme-label">Tema</span>
-      <div class="seg">
-        <button type="button" data-theme="glass">
-          <i class="fa-solid fa-wand-magic-sparkles"></i><span>Glass</span>
-        </button>
-        <button type="button" data-theme="blue">
-          <i class="fa-solid fa-droplet"></i><span>Blue</span>
-        </button>
-        <button type="button" data-theme="city">
-          <i class="fa-solid fa-city"></i><span>City</span>
-        </button>
-        <button type="button" data-theme="mono">
-          <i class="fa-solid fa-circle-half-stroke"></i><span>Mono</span>
-        </button>
-      </div>
-    </div>
 
-    <div class="theme-row">
-      <span class="theme-label">Estilo</span>
-      <div class="seg">
-        <button type="button" data-style="soft">
-          <i class="fa-solid fa-cloud"></i><span>Soft</span>
-        </button>
-        <button type="button" data-style="outline">
-          <i class="fa-regular fa-square"></i><span>Outline</span>
-        </button>
-        <button type="button" data-style="compact">
-          <i class="fa-solid fa-compress"></i><span>Compact</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <audio id="introAudio" src="assets/music/music.mp3" preload="auto"></audio>
-  <script src="intro.js" defer></script>
 </body>
-</html>
+</html><script>
+const audio = document.getElementById("audio");
+const playBtn = document.getElementById("playBtn");
+const muteBtn = document.getElementById("muteBtn");
+const seekBar = document.getElementById("seekBar");
+const currentTimeEl = document.getElementById("currentTime");
+const durationEl = document.getElementById("duration");
+
+function formatTime(time){
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+}
+
+playBtn.addEventListener("click", () => {
+  if(audio.paused){
+    audio.play();
+    playBtn.innerHTML = `<i class="fa-solid fa-pause"></i> <span>Pausar</span>`;
+  } else {
+    audio.pause();
+    playBtn.innerHTML = `<i class="fa-solid fa-play"></i> <span>Reproducir música</span>`;
+  }
+});
+
+muteBtn.addEventListener("click", () => {
+  audio.muted = !audio.muted;
+  muteBtn.innerHTML = audio.muted
+    ? `<i class="fa-solid fa-volume-xmark"></i>`
+    : `<i class="fa-solid fa-volume-high"></i>`;
+});
+
+audio.addEventListener("loadedmetadata", () => {
+  durationEl.textContent = formatTime(audio.duration);
+});
+
+audio.addEventListener("timeupdate", () => {
+  seekBar.value = (audio.currentTime / audio.duration) * 100;
+  currentTimeEl.textContent = formatTime(audio.currentTime);
+});
+
+seekBar.addEventListener("input", () => {
+  audio.currentTime = (seekBar.value / 100) * audio.duration;
+});
+</script>
